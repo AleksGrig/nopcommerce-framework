@@ -13,7 +13,7 @@ def setup(browser):
     from selenium.webdriver.firefox.service import Service
     service_obj = Service("drivers/geckodriver-v0.32.0-win32/geckodriver.exe")
     options = webdriver.FirefoxOptions()
-    options.binary_location = 'C:\Program Files\Mozilla Firefox\\firefox.exe'
+    options.binary_location = 'C:\\Program Files\\Mozilla Firefox\\firefox.exe'
     driver = webdriver.Firefox(service=service_obj,options=options)
   else:
     from selenium.webdriver.chrome.service import Service
