@@ -22,3 +22,20 @@
 - testdata/ - excel file with emails and password for data driven tests
 - utilities/ - classes and functions to work with excel sheets, *.ini files and python logging 
 - run.bat
+
+## Running Tests
+### *run tests*
+`pytest -v -s testcases/test_login.py`
+### *run tests on desired browser*
+```
+pytest -v -s testcases/test_login.py --browser chrome
+pytest -v -s testcases/test_login.py --browser edge
+pytest -v -s testcases/test_login.py --browser firefox
+```
+### *run tests in parallel(n=num_of_threads)*
+`pytest -v -s -n=2 testcases/test_login.py` 
+
+## HTML Reports
+### *Update conftest.py hooks*
+### *run code*
+`pytest -v -s -n=2 --html=reports/report.html testcases/test_login.py`
