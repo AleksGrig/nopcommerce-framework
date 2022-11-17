@@ -33,3 +33,17 @@ def pytest_addoption(parser):
 @pytest.fixture()
 def browser(request):
   return request.config.getoption("--browser")
+
+# pytest html report
+
+# it's a hook for adding environment info to html report
+def pytest_configure(config):
+  config._metadata['Project Name'] = 'nop commerce'
+  config._metadata['Module Name'] = 'Customers'
+  config._metadata['Tester'] = 'Alex'
+
+# it's a hook for delete/modify environment info in html report
+@pytest.hookimpl(optionalhook=True)
+def pytest_metadata(metadata):
+  metadata.pop('JAVA_HOME', None)
+  metadata.pop('Plugins', None)
