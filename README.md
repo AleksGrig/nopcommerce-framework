@@ -29,8 +29,10 @@
 
 ## Running Tests
 ### *run tests*
-`pytest -v -s testcases/test_login.py`
-`pytest -v -s --html=reports/report.html testcases/test_login.py`
+```
+pytest -v -s testcases/test_login.py
+pytest -v -s --html=reports/report.html testcases/test_login.py
+```
 ### *run tests on desired browser*
 ```
 pytest -v -s testcases/test_login.py --browser chrome
