@@ -25,9 +25,12 @@
 - utilities/ - classes and functions to work with excel sheets, *.ini files and python logging 
 - run.bat
 
+`__init__.py` is needed inside folder to import its modules from another folder
+
 ## Running Tests
 ### *run tests*
 `pytest -v -s testcases/test_login.py`
+`pytest -v -s --html=reports/report.html testcases/test_login.py`
 ### *run tests on desired browser*
 ```
 pytest -v -s testcases/test_login.py --browser chrome
