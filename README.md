@@ -2,6 +2,8 @@
 ## *Python Selenium Hybrid Framework* based on [SDET- QA Automation Techie youtube course](https://www.youtube.com/playlist?list=PLUDwpEzHYYLt2RzOb-_eafLAP0VSoyJhf)
 ## [Store Demo - nopCommerce](https://www.nopcommerce.com/en/demo)
 
+`git clone https://github.com/AleksGrig/nopcommerce-framework.git`
+
 ## Libraries
 - selenium - browser automation library
 - pytest - python testing framework
