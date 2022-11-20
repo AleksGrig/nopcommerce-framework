@@ -12,9 +12,10 @@ class Test_SearchCustomerByEmail_004:
   password = ReadConfig.get_password()
   logger = LogGen.loggen()  
 
+  @pytest.mark.regression
   def test_searchCustomerByEmail(self,setup):
     self.logger.info("************* SearchCustomerByEmail_004 **********")
-    self.driver=setup
+    self.driver = setup
     self.driver.get(self.baseURL)
 
     self.lp = Login(self.driver)
@@ -33,8 +34,7 @@ class Test_SearchCustomerByEmail_004:
     searchcust = SearchCustomer(self.driver)
     searchcust.setEmail("victoria_victoria@nopCommerce.com")
     searchcust.clickSearch()
-    time.sleep(5)
     status=searchcust.searchCustomerByEmail("victoria_victoria@nopCommerce.com")
     self.driver.close()
-    assert True==status
+    assert True == status
     self.logger.info("***************  TC_SearchCustomerByEmail_004 Finished  *********** ")
