@@ -1,5 +1,5 @@
 rem chrome
-pytest -v --capture=tee-sys -n=2 -m "sanity" --html=reports/report.html testcases/ --browser chrome
+pytest -v --capture=tee-sys -n=2 -m "sanity" --html=reports/report_chrome.html testcases/ --browser chrome
 rem pytest -v --capture=tee-sys -n=2 -m "sanity or regression" --html=reports/report_chrome.html testcases/ --browser chrome
 rem pytest -v --capture=tee-sys -n=2 -m "sanity and regression" --html=reports/report_chrome.html testcases/ --browser chrome
 rem pytest -v --capture=tee-sys -n=2 -m "regression" --html=reports/report_chrome.html testcases/ --browser chrome
