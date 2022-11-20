@@ -4,6 +4,16 @@
 
 `git clone https://github.com/AleksGrig/nopcommerce-framework.git`
 
+---
+
+### *run sanity group tests on 2 threads with html report(pytest-html v.3)*
+`pytest -v --capture=tee-sys -n=2 -m "sanity" --html=reports/report.html testcases/`
+
+### *run tests belonging to sanity AND regression groups with html report(pytest-html v.3)*
+`pytest -v --capture=tee-sys -n=2 -m "sanity and regression" --html=reports/report.html testcases/`
+
+---
+
 ## Libraries
 - selenium - browser automation library
 - pytest - python testing framework
@@ -32,6 +42,7 @@
 ```
 pytest -v -s testcases/test_login.py
 pytest -v -s --html=reports/report.html testcases/test_login.py
+pytest -v -s --html=reports/report.html testcases/
 ```
 ### *run tests on desired browser*
 ```
@@ -39,10 +50,20 @@ pytest -v -s testcases/test_login.py --browser chrome
 pytest -v -s testcases/test_login.py --browser edge
 pytest -v -s testcases/test_login.py --browser firefox
 ```
+
+### *run specific groups of tests*
+```
+pytest -v -s -m "sanity" testcases/
+pytest -v -s -m "sanity and regression" testcases/
+pytest -v -s -m "sanity or regression" testcases/
+```
+
 ### *run tests in parallel(n=num_of_threads)*
 `pytest -v -s -n=2 testcases/test_login.py` 
 
 ## HTML Reports
 ### *Update conftest.py hooks*
-### *run code*
+### *run code on pytest-html v.3*
+`pytest -v ---capture=tee-sys -n=2 --html=reports/report.html testcases/test_login.py`
+### *run code on pytest-html v.2*
 `pytest -v -s -n=2 --html=reports/report.html testcases/test_login.py`
