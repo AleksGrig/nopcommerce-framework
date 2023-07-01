@@ -27,24 +27,21 @@ def setup(browser):
     driver.implicitly_wait(10)
     return driver
 
+
 # getting value from CLI
-
-
 def pytest_addoption(parser):
     parser.addoption("--browser")
 
+
 # returning --browser option to setup method
-
-
 @pytest.fixture()
 def browser(request):
     return request.config.getoption("--browser")
 
+
 # pytest html report
 
 # it's a hook for adding environment info to html report
-
-
 def pytest_configure(config):
     # config._metadata['Project Name'] = 'nop commerce'
     # config._metadata['Module Name'] = 'Customers'
@@ -55,9 +52,8 @@ def pytest_configure(config):
         "Module Name": "Customers",
     }
 
+
 # it's a hook for delete/modify environment info in html report
-
-
 @pytest.hookimpl(optionalhook=True)
 def pytest_metadata(metadata):
     metadata.pop('JAVA_HOME', None)

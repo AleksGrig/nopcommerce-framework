@@ -12,18 +12,18 @@ class Login:
         self.driver = driver
 
     def set_username(self, username):
-        self.driver.find_element(By.ID, self.textbox_username_id).clear()
+        self.driver.find_element(By.ID, Login.textbox_username_id).clear()
         self.driver.find_element(
-            By.ID, self.textbox_username_id).send_keys(username)
+            By.ID, Login.textbox_username_id).send_keys(username)
 
     def set_password(self, password):
-        self.driver.find_element(By.ID, self.textbox_password_id).clear()
+        self.driver.find_element(By.ID, Login.textbox_password_id).clear()
         self.driver.find_element(
-            By.ID, self.textbox_password_id).send_keys(password)
+            By.ID, Login.textbox_password_id).send_keys(password)
 
     def click_login(self):
-        self.driver.find_element(By.XPATH, self.button_login_xpath).click()
+        self.driver.find_element(By.XPATH, Login.button_login_xpath).click()
 
     def click_logout(self):
         self.driver.find_element(
-            By.LINK_TEXT, self.link_logout_linktext).click()
+            By.LINK_TEXT, Login.link_logout_linktext).click()
