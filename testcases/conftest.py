@@ -46,9 +46,14 @@ def browser(request):
 
 
 def pytest_configure(config):
-    config._metadata['Project Name'] = 'nop commerce'
-    config._metadata['Module Name'] = 'Customers'
-    config._metadata['Tester'] = 'Alex'
+    # config._metadata['Project Name'] = 'nop commerce'
+    # config._metadata['Module Name'] = 'Customers'
+    # config._metadata['Tester'] = 'Alex'
+    config._metadata = {
+        "Tester": "Alex",
+        "Project Name": "nop commerce",
+        "Module Name": "Customers",
+    }
 
 # it's a hook for delete/modify environment info in html report
 
