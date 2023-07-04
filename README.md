@@ -25,7 +25,7 @@
 `pip install selenium pytest pytest-html pytest-xdist openpyxl`
 
 ## Folder Structure
-- configurations/ - general data for all testcases(url, email, password)
+- configurations/ - general data for all testcases(url, email, password) kept in config.ini
 - drivers/ - selenium webdrivers for chrome, edge and firefox browsers
 - logs/ - python logging files
 - pageobjects/ - classes representing application webpages
