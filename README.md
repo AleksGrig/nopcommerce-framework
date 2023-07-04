@@ -65,6 +65,6 @@ pytest -v -s -m "sanity or regression" testcases/
 ## HTML Reports
 ### *Update conftest.py hooks*
 ### *run code on pytest-html v.3*
-`pytest -v ---capture=tee-sys -n=2 --html=reports/report.html testcases/test_login.py`
+`pytest -v --capture=tee-sys -n=2 --html=reports/report.html testcases/test_login.py`
 ### *run code on pytest-html v.2*
 `pytest -v -s -n=2 --html=reports/report.html testcases/test_login.py`
