@@ -36,7 +36,7 @@ class Test_003_AddCustomer:
 
         self.logger.info("************* Providing customer info **********")
 
-        self.email = random_generator() + "@gmail.com"
+        self.email = f"{random_generator()}@gmail.com"
         self.addcust.setEmail(self.email)
         self.addcust.setPassword("test123")
         self.addcust.setCustomerRoles("Registered")
