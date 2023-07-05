@@ -50,7 +50,7 @@ class SearchCustomer:
         flag = False
         for r in range(1, self.getNoOfRows()+1):
             name = self.driver.find_element(
-                By.XPATH, "//table[@id='customers-grid']/tbody/tr/td[3]").text
+                By.XPATH, "//table[@id='customers-grid']/tbody/tr["+str(r)+"]/td[3]").text
             if name == Name:
                 flag = True
                 break

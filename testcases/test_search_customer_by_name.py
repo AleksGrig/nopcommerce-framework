@@ -36,6 +36,8 @@ class Test_SearchCustomerByName_005:
         searchcust.setFirstName("Victoria")
         searchcust.setLastName("Terces")
         searchcust.clickSearch()
+        self.driver.execute_script(
+            "window.scrollTo(0, document.body.scrollHeight);")
         status = searchcust.searchCustomerByName("Victoria Terces")
         self.driver.close()
         assert True == status
