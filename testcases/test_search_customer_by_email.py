@@ -37,6 +37,8 @@ class Test_SearchCustomerByEmail_004:
         searchcust = SearchCustomer(self.driver)
         searchcust.setEmail("victoria_victoria@nopCommerce.com")
         searchcust.clickSearch()
+        self.driver.execute_script(
+            "window.scrollTo(0, document.body.scrollHeight);")
         status = searchcust.searchCustomerByEmail(
             "victoria_victoria@nopCommerce.com")
         self.driver.close()
