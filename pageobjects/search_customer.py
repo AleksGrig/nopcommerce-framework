@@ -36,22 +36,18 @@ class SearchCustomer:
         return len(self.driver.find_elements(By.XPATH, self.tableColumns_xpath))
 
     def searchCustomerByEmail(self, email):
-        flag = False
-        for r in range(1, self.getNoOfRows()+1):
+        for row in range(1, self.getNoOfRows()+1):
             table = self.driver.find_element(By.XPATH, self.table_xpath)
             emailid = table.find_element(
-                By.XPATH, "//table[@id='customers-grid']/tbody/tr["+str(r)+"]/td[2]").text
+                By.XPATH, f"//table[@id='customers-grid']/tbody/tr[{row}]/td[2]").text
             if emailid == email:
-                flag = True
-                break
-        return flag
+                return True
+        return False
 
     def searchCustomerByName(self, Name):
-        flag = False
-        for r in range(1, self.getNoOfRows()+1):
+        for row in range(1, self.getNoOfRows()+1):
             name = self.driver.find_element(
-                By.XPATH, "//table[@id='customers-grid']/tbody/tr["+str(r)+"]/td[3]").text
+                By.XPATH, f"//table[@id='customers-grid']/tbody/tr[{row}]/td[3]").text
             if name == Name:
-                flag = True
-                break
-        return flag
+                return True
+        return False
